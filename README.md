@@ -1,4 +1,5 @@
 # Basic Astro Digital NDVI Vector Map Setup
+[Working Example](https://rawgit.com/AstroDigital/example-ndvi-vector/master/example/index.html) | [Primary Code](https://github.com/AstroDigital/example-ndvi-vector/blob/master/example/ad-basic-map.js)
 ## Overview
 This tutorial describes extracting vector data from the return of Astro Digital's NDVI values API, and rendering it as a map using the Leaflet Javascript framework. This basic setup step is a prerequisite for more advanced map treatment, and subsequent tutorials in this series will build on it to cover:
 - [Symbolizing the NDVI vector product map](https://github.com/AstroDigital/example-ndvi-vector-symbology)
