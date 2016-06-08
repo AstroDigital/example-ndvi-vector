@@ -1,12 +1,13 @@
 'use strict'
 
-// Function used to initialize a Mapbox map component containing a polygon layer
+// Function used to initialize a Leaflet map component containing a polygon layer
 const setupMap = (fieldPolys, mbAccessToken) => {
-  L.mapbox.accessToken = mbAccessToken;
   /* Initialize a map with a satellite image base layer, and place it within
   the div called "map". It is necessary to define a temporary viewing lat/long,
   which we will later overwrite using the boundaries of the field polygons. */
-  const map = L.mapbox.map('map', 'mapbox.satellite').setView([0, 0], 0);
+  const basemapUrl = 'http://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png';
+  const map = L.map('map').setView([0, 0], 0);
+  L.tileLayer(`${basemapUrl}?access_token=${mbAccessToken}`).addTo(map);
   // Add the field polygons to the map.
   fieldPolys.addTo(map);
   // Force the map view to zoom to the field polygon boundaries.
@@ -38,9 +39,9 @@ let fieldPolys = L.geoJson({
 });
 
 /* Once a FeatureCollection has been created, it can be mapped using the
-Mapbox.js plugin, as demonstrated in the setupMap function.
+Leaflet.js plugin, as demonstrated in the setupMap function.
 
-Set the Mapbox access token to your personal token, as generated at the
+Set the Mapbox access token to your personal Mapbox token, as generated at the
 Mapbox website (https://www.mapbox.com/studio/account/tokens/). */
 const mbAccessToken = 'pk.eyJ1IjoiYXN0cm9kaWdpdGFsIiwiYSI6ImNVb1B0ZkEifQ.IrJoULY2VMSBNFqHLrFYew';
 // Run the setupMap function.
