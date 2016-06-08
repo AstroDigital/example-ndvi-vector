@@ -27,7 +27,7 @@ representing the geometry and NDVI value properties for that field.
 To create a FeatureCollection from this data, map over its results attribute
 and extract the id and values for each field. Insert the output array into
 simple GeoJSON FeatureCollection boilerplate, and convert the entire GeoJSON
-object to a Mapbox layer, as shown below. */
+object to a Leaflet layer, as shown below. */
 let fieldPolys = L.geoJson({
   'type': 'FeatureCollection',
   'features': adNdviData.results.map((field) => {
