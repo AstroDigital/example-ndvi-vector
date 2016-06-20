@@ -1,5 +1,6 @@
 # Basic Astro Digital NDVI Vector Map Setup
 [Working Example](https://rawgit.com/AstroDigital/example-ndvi-vector/master/example/index.html) | [Primary Code](https://github.com/AstroDigital/example-ndvi-vector/blob/master/example/ad-basic-map.js)
+
 ## Overview
 This tutorial describes extracting vector data from the return of Astro Digital's NDVI values API, and rendering it as a map using the Leaflet Javascript framework. This basic setup step is a prerequisite for more advanced map treatment, and subsequent tutorials in this series will build on it to cover:
 - [Symbolizing the NDVI vector product map](https://github.com/AstroDigital/example-ndvi-vector-symbology)
@@ -8,9 +9,9 @@ This tutorial describes extracting vector data from the return of Astro Digital'
 
 ## Procedure
 ### HTML
-Begin by writing basic boilerplate HTML, containing a div called `#map` styled to fill the window, and including the Leaflet script and css support files, as shown in this [example](https://github.com/AstroDigital/example-ndvi-vector/blob/master/example/index.html).
+Begin by writing basic boilerplate HTML, containing a div called `#map` styled to fill the window, and including the Leaflet script and css support files in the header and links to the support data in the body, as shown in this [example](https://github.com/AstroDigital/example-ndvi-vector/blob/master/example/index.html).
 
-This tutorial simulates the code modularization provided by production build systems such as [Require.js](http://requirejs.org/), by separating the NDVI data from the functional code using separate script imports. The example program itself is located in the [ad-basic-map.js](https://github.com/AstroDigital/example-ndvi-vector/blob/master/example/ad-basic-map.js) file.
+This tutorial simulates the code modularization provided by production build systems such as [Require.js](http://requirejs.org/), by separating the NDVI data from the functional code using separate script imports in the body. The example program itself is located in the [ad-basic-map.js](https://github.com/AstroDigital/example-ndvi-vector/blob/master/example/ad-basic-map.js) file.
 
 ### Javascript
 The NDVI values response includes a `results` attribute, which is an array in which each feature represents an input polygon containing two attributes that we will most likely need to create a map: a numerical `id` and a `value`. The value consists of GeoJSON describing the geometry of the feature, and properties describing its NDVI values over time.
