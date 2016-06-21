@@ -1,3 +1,4 @@
+/* global L adNdviData */
 'use strict'
 
 // Function used to initialize a Leaflet map component containing a polygon layer
@@ -13,8 +14,6 @@ const setupMap = (fieldPolys, mbAccessToken) => {
   // Force the map view to zoom to the field polygon boundaries.
   map.fitBounds(fieldPolys.getBounds());
 }
-
-
 
 / !!! PROGRAM BEGINS HERE !!! /
 
